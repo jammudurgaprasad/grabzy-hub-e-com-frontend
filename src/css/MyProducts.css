@@ -1,0 +1,113 @@
+.myprod-page {
+  min-height: 100vh;
+}
+
+.myprod-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.myprod-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.myprod-category {
+  margin-bottom: 40px;
+}
+
+.myprod-category-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.myprod-subcategory {
+  margin-left: 15px;
+}
+
+.myprod-subcategory-title {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.myprod-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.myprod-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  width: 220px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.myprod-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.myprod-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.myprod-name {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.myprod-price {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.myprod-original {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.myprod-sizes {
+  font-size: 13px;
+  color: #777;
+  margin: 4px 0;
+}
+
+.myprod-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.myprod-actions button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.myprod-actions button:hover {
+  background-color: #5c6bc0;
+}
+
+.myprod-no-products {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}

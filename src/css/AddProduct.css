@@ -1,0 +1,94 @@
+/* Ensure this takes full viewport height */
+.seller-dashboard {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6fc; /* Change or keep your preferred light color */
+  min-height: 100vh;
+  padding-bottom: 40px; /* Optional spacing at bottom */
+  box-sizing: border-box;
+}
+
+/* Add this to make sure body doesn’t have any margin and avoids a scrollbar */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6fc; /* Match the .seller-dashboard background */
+  overflow-x: hidden;
+}
+
+
+
+
+.add-product-form {
+  max-width: 600px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+.add-product-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.add-product-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-product-form button {
+  padding: 12px;
+  background-color: #3D52A0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-form button:hover {
+  background-color: #5a6dc5;
+}
+
+
+
+.add-product-form {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-product-form input,
+.add-product-form select,
+.add-product-form textarea {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.add-product-form button {
+  padding: 12px;
+  background-color: #3D52A0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.add-product-form button:hover {
+  background-color: #5d6ecf;
+}
+
+.size-options .checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}

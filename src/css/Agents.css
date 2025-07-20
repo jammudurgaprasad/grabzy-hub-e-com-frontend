@@ -1,0 +1,34 @@
+.agents-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.agents-columns {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.agents-list {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+.agent-card {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.agent-card:last-child {
+  border-bottom: none;
+}
+
+button {
+  margin-top: 8px;
+  padding: 6px 10px;
+}

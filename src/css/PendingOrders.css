@@ -1,0 +1,71 @@
+.pending-orders-page {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.pending-orders-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.pending-orders-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.pending-orders-empty {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+.pending-order-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.order-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.order-details {
+  flex: 1;
+  font-size: 14px;
+  color: #444;
+}
+
+.order-assign {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-assign select,
+.order-assign button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.order-assign button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.order-assign button:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,28 @@
+.sellers-section {
+  margin-top: 2rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.seller-card {
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.seller-card button {
+  margin-top: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.seller-card button:hover {
+  background-color: #0056b3;
+}
