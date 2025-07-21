@@ -1,4 +1,7 @@
 /* LoginTabs.css */
+body{
+  background-color: green;
+}
 .tab-buttons {
   display: flex;
   justify-content: center;

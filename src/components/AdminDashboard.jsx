@@ -1,20 +1,3 @@
-// // src/components/AdminDashboard.jsx
-// import React from "react";
-// import "../css/AdminDashboard.css";
-
-// const AdminDashboard = () => {
-//   return (
-//     <div className="dashboard-container">
-//       <h2>Welcome Admin!</h2>
-//       <p>This is your control panel. You'll manage sellers and agents here.</p>
-//     </div>
-//   );
-// };
-
-// export default AdminDashboard;
-
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/AdminDashboard.css";

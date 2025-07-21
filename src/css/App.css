@@ -1,8 +1,10 @@
 /* App.css */
 body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #EDE8F5;
+  /* background-color: #EDE8F5; */
   color: #3D52A0;
 }
 

@@ -7,23 +7,6 @@ const AgentDelivered = () => {
 
   const [agentId, setAgentId] = useState(null);
   const [deliveredOrders, setDeliveredOrders] = useState([]);
-
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const res = await axios.get(`${API_BASE}/delivery-agents/check-agent-auth`, {
-  //         withCredentials: true,
-  //       });
-  //       setAgentId(res.data.agentId);
-  //     } catch (error) {
-  //       console.error("Auth failed:", error.response?.data || error.message);
-  //     }
-  //   };
-
-  //   checkAuth();
-  // }, []);
-
-
   useEffect(() => {
   const checkAuth = async () => {
     try {
@@ -38,27 +21,6 @@ const AgentDelivered = () => {
 
   checkAuth();
 }, [API_BASE]); // ← added API_BASE here
-
-
-
-  // useEffect(() => {
-  //   const fetchDeliveredOrders = async () => {
-  //     if (!agentId) return;
-
-  //     try {
-  //       const res = await axios.get(`${API_BASE}/agent-orders/agent/${agentId}`);
-  //       const deliveredOnly = res.data
-  //         .filter(item => item.order.status === "DELIVERED")
-  //         .sort((a, b) => b.order.orderId - a.order.orderId); // Descending by orderId
-  //       setDeliveredOrders(deliveredOnly);
-  //     } catch (error) {
-  //       console.error("Error fetching delivered orders:", error.response?.data || error.message);
-  //     }
-  //   };
-
-  //   fetchDeliveredOrders();
-  // }, [agentId]);
-
 
   useEffect(() => {
   const fetchDeliveredOrders = async () => {

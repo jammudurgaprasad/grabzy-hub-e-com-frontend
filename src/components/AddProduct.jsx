@@ -6,11 +6,15 @@ import "../css/AddProduct.css";
 import SellerNavbar from "./SellerNavbar";
 
 const categoryOptions = {
-  Clothing: ["Men", "Women", "Kids"],
-  Electronics: ["Mobiles", "Laptops", "Accessories"],
-  Footwear: ["Men", "Women", "Kids"],
-  Home: ["Furniture", "Kitchen", "Decor"],
-  Beauty: ["Makeup", "Skincare", "Haircare"],
+  Mobiles: ["Smartphones", "Feature Phones", "Mobile Accessories"],
+  Appliances: ["Refrigerators", "Washing Machines", "Microwaves", "Air Conditioners"],
+  Electronics: ["Mobiles", "Laptops", "Accessories", "Cameras", "Tablets"],
+  Beauty: ["Makeup", "Skincare", "Haircare", "Fragrances"],
+  Fashion: ["Men", "Women", "Kids", "Accessories"],
+  Food: ["Snacks", "Beverages", "Staples", "Packaged Foods"],
+  HomeKitchen: ["Furniture", "Kitchen", "Decor", "Storage", "Dining"],
+  Furniture: ["Beds", "Sofas", "Tables", "Chairs", "Wardrobes"],
+  Grocery: ["Fruits & Vegetables", "Dairy", "Bakery", "Grains", "Spices"]
 };
 
 const allSizes = [
@@ -64,21 +68,6 @@ const AddProduct = () => {
         });
     }
   }, [productId]);
-
-  // useEffect(() => {
-  //   const { actualPrice, discountPercentage } = product;
-  //   if (actualPrice && discountPercentage) {
-  //     const price = parseFloat(actualPrice);
-  //     const discount = parseFloat(discountPercentage);
-  //     if (!isNaN(price) && !isNaN(discount)) {
-  //       const discounted = price - (price * discount) / 100;
-  //       setProduct((prev) => ({
-  //         ...prev,
-  //         discountPrice: discounted.toFixed(2),
-  //       }));
-  //     }
-  //   }
-  // }, [product.actualPrice, product.discountPercentage]);
 
 useEffect(() => {
   const { actualPrice, discountPercentage } = product;
