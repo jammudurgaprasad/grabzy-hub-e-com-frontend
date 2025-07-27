@@ -6,44 +6,42 @@ const CurrentOrders = () => {
   const API_BASE = process.env.REACT_APP_API_BASE_URL;
 
   const [agentId, setAgentId] = useState(null);
+  const [agentEmail, setAgentEmail] = useState(null);
   const [orders, setOrders] = useState([]);
-  const [statusUpdates, setStatusUpdates] = useState({}); // Track status per order
+  const [statusUpdates, setStatusUpdates] = useState({});
 
   // Fetch authenticated agent
-useEffect(() => {
-  const checkAuth = async () => {
-    try {
-      const res = await axios.get(`${API_BASE}/delivery-agents/check-agent-auth`, {
-        withCredentials: true,
-      });
-      setAgentId(res.data.agentId);
-    } catch (error) {
-      console.error("Auth failed:", error.response?.data || error.message);
-    }
-  };
-
-  checkAuth();
-}, [API_BASE]);
-
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await axios.get(`${API_BASE}/delivery-agents/check-agent-auth`, {
+          withCredentials: true,
+        });
+        setAgentId(res.data.agentId);
+        setAgentEmail(res.data.userEmail);
+      } catch (error) {
+        console.error("Auth failed:", error.response?.data || error.message);
+      }
+    };
+    checkAuth();
+  }, [API_BASE]);
 
   // Fetch orders for the agent
-useEffect(() => {
-  const checkAuth = async () => {
-    try {
-      const res = await axios.get(`${API_BASE}/delivery-agents/check-agent-auth`, {
-        withCredentials: true,
-      });
-      setAgentId(res.data.agentId);
-    } catch (error) {
-      console.error("Auth failed:", error.response?.data || error.message);
+  useEffect(() => {
+    if (agentId) {
+      const fetchOrders = async () => {
+        try {
+          const res = await axios.get(`${API_BASE}/agent-orders/agent/${agentId}/active`);
+          setOrders(res.data);
+          console.log("Orders data:", res.data); // Debugging
+        } catch (error) {
+          console.error("Failed to fetch orders:", error.response?.data || error.message);
+        }
+      };
+      fetchOrders();
     }
-  };
+  }, [agentId, API_BASE]);
 
-  checkAuth();
-}, [API_BASE]);
-
-
-  // Handle status dropdown change
   const handleStatusChange = (orderId, newStatus) => {
     setStatusUpdates((prev) => ({
       ...prev,
@@ -51,7 +49,6 @@ useEffect(() => {
     }));
   };
 
-  // Submit status update
   const handleSubmitStatus = async (orderId) => {
     const selectedStatus = statusUpdates[orderId];
     if (!selectedStatus) return;
@@ -68,20 +65,19 @@ useEffect(() => {
 
   return (
     <div className="orders-container">
-      <h2 className="heading">Welcome, Agent {agentId}</h2>
+      <h2 className="heading">Welcome, {agentEmail}</h2>
 
       {orders.length === 0 ? (
         <p>No active orders assigned.</p>
       ) : (
         <div className="orders-grid">
           {orders
-            .filter((agentOrder) =>
-              agentOrder.order.status !== "PENDING" &&
+            .filter((agentOrder) => 
+              agentOrder.order.status !== "PENDING" && 
               agentOrder.order.status !== "DELIVERED"
             )
             .map((agentOrder) => {
               const order = agentOrder.order;
-
               return (
                 <div className="order-card" key={agentOrder.id}>
                   <img src={order.image1} alt={order.productName} className="product-img" />
