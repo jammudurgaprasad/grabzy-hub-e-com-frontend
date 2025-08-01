@@ -24,7 +24,9 @@ function LoginTabs() {
   return (
     <div className="login-tabs-container">
       <h1 className="grabzy-title">Grabzy Hub</h1>
-      <a href="https://grabzy-e-com-frontend.netlify.app/" target="_blank">Visit Grabzy!</a>
+      <a href="https://grabzy-e-com-frontend.netlify.app/" target="_blank" rel="noopener noreferrer">
+        Visit Grabzy!
+      </a>
       <div className="tab-buttons">
         <button className={activeTab === "agent" ? "active" : ""} onClick={() => setActiveTab("agent")}>
           Delivery Agent
