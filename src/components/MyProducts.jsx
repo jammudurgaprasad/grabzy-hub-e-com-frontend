@@ -25,7 +25,7 @@ const MyProducts = () => {
         groupByCategory(sellerProducts);
       } catch (error) {
         console.error("Auth/Product fetch failed", error);
-        navigate("/seller-login");
+        navigate("/");
       }
     };
 
